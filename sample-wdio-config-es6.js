@@ -1,6 +1,4 @@
 
-import * as chai from 'chai'
-
 exports.config = {
     
     //

@@ -7,6 +7,8 @@ const bootstrapCucumber = function () {
     wdioCucConf.backtrace = false
     wdioCucConf.profile = []
     wdioCucConf.tags = []
+
+    return wdioCucConf
 }
 
 export const wdioCucConf = bootstrapCucumber ()

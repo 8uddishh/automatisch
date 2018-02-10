@@ -25,7 +25,7 @@ const bootstrap = function () {
     // Level of logging verbosity: silent | verbose | command | data | result | error
     wdioConf.logLevel = 'verbose'
     // Saves a screenshot to a given path if a command fails.
-    wdioConf.screenshotPath = './errorShots/',
+    wdioConf.screenshotPath = './errorShots/'
     // Set a base URL in order to shorten url command calls. If your `url` parameter starts
     // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
     // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
@@ -80,6 +80,8 @@ const bootstrap = function () {
     wdioConf.afterSession = wdioAfterSession
 
     wdioConf.onComplete = wdioOnComplete
+
+    console.log(JSON.stringify(wdioConf))
 
     return wdioConf
 }
