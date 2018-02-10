@@ -1,0 +1,6 @@
+node_modules
+exhaust
+conf
+bootstrap*.js
+!wdio.es6/conf
+!wdio.es6/**/*.*
