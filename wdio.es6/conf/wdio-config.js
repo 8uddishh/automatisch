@@ -38,12 +38,4 @@ export class wdioConfig {
         this.afterSession = () => {}
         this.onComplete = () => {}
     }
-
-    get onComplete () {
-        return this._onComplete
-    }
-    set onComplete (onComplete) {
-        this._onComplete = onComplete
-    }
-    
 }

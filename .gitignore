@@ -3,6 +3,5 @@ allure-results
 exhaust
 conf
 bootstrap*.js
-!wdio.es6/conf
-!wdio.es6/**/*.*
+wdio.compiled
 *.log

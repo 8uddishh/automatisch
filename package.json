@@ -4,8 +4,8 @@
   "description": "Web driver io, cucumber automation layout",
   "main": "auto.js",
   "scripts": {
-    "compile": "babel wdio.es6 --out-dir ./",
-    "wdio": "wdio ./bootstrap-wdio-config.js",
+    "compile": "babel wdio.es6 --out-dir ./wdio.compiled",
+    "wdio": "wdio ./wdio.compiled/bootstrap-wdio-config.js",
     "start": "npm run compile && npm run wdio"
   },
   "keywords": [
