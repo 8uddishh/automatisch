@@ -5,3 +5,4 @@ conf
 bootstrap*.js
 !wdio.es6/conf
 !wdio.es6/**/*.*
+*.log
