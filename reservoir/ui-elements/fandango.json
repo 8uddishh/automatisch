@@ -1,0 +1,6 @@
+{
+    "Home": {
+        "SearchText": ".fan-input.style-search:not(.width-100)",
+        "SearchButton": "button.fan-btn.fan-btn-style-go"
+    }
+}

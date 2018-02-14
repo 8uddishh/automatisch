@@ -30,7 +30,7 @@ const bootstrap = function () {
     // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
     // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
     // gets prepended directly.
-    wdioConf.baseUrl = 'http://webdriver.io'
+    wdioConf.baseUrl = 'https://www.fandango.com'
     // Default timeout for all waitFor* commands.
     wdioConf.waitforTimeout = 10000
     // Default timeout in milliseconds for request
