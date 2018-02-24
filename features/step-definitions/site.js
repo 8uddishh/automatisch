@@ -1,9 +1,19 @@
 import { Given, When, Then } from 'cucumber'
-import { expect } from 'chai'
+import { expect, assert } from 'chai'
+import decode from 'decode-html'
 
 Given(/^the user opens the website$/, function () {
     browser.url('/')
-    
+})
+
+Given(/^the user is in the page containing element "([^"]*)" text as "([^"]*)"$/, function (elementIdentifier, value) {
+    let headerText = $(cssTags[elementIdentifier]).getText()
+    assert.equal(headerText, decode(value), `Wrong page`)
+})
+
+Then(/^the user checks if the page contains an element "([^"]*)" with text as "([^"]*)"$/, function (elementIdentifier, value) {
+    let headerText = $(cssTags[elementIdentifier]).getText()
+    assert.equal(headerText, value, `Element not found`)
 })
 
 Then(/^the user waits for "([^"]*)"$/, function (timeout) {

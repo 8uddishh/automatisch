@@ -1,0 +1,40 @@
+<div class="container notification">
+    <strong>Automation Test Report </strong> 
+    <span class="tag is-dark is-pulled-right">{{as-date startTime}}</span> 
+</div>
+
+<div class="container dashboard">
+    <nav class="level mt20">
+        <div class="level-item has-text-centered">
+            <div>
+                <p class="heading">features</p>
+                <p class="title">{{count selectedFeatures}}</p>
+            </div>
+        </div>
+
+        <div class="level-item has-text-centered">
+            <div>
+                <p class="heading">success</p>
+                <p class="title">{{success}}</p>
+            </div>
+        </div>
+        <div class="level-item has-text-centered">
+            <div>
+                <p class="heading">failed</p>
+                <p class="title">{{failed}}</p>
+            </div>
+        </div>
+        <div class="level-item has-text-centered">
+            <div>
+                <p class="heading">not run</p>
+                <p class="title">{{notrun}}</p>
+            </div>
+        </div>
+        <div class="level-item has-text-centered">
+            <div>
+                <p class="heading">run time</p>
+                <p class="title">{{time-diff endTime startTime}}</p>
+            </div>
+        </div>
+    </nav>
+</div>

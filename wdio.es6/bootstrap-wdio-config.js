@@ -6,6 +6,7 @@ import { wdioOnPrepare,
     wdioAfterStep, wdioAfterScenario, wdioAfterFeature, wdioAfterCommand, wdioAfter, wdioAfterSession,
     wdioOnComplete
  } from './bootstrap-wdio-lifecycle-hooks'
+ import amassReporter from './extras/wdio-amass-reporter'
 
 const bootstrap = function () {
     let wdioConf = new wdioConfig ()
@@ -25,7 +26,7 @@ const bootstrap = function () {
     // Level of logging verbosity: silent | verbose | command | data | result | error
     wdioConf.logLevel = 'verbose'
     // Saves a screenshot to a given path if a command fails.
-    wdioConf.screenshotPath = './errorShots/'
+    wdioConf.screenshotPath = './exhaust/screenshots/error'
     // Set a base URL in order to shorten url command calls. If your `url` parameter starts
     // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
     // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
@@ -46,17 +47,18 @@ const bootstrap = function () {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: http://webdriver.io/guide/reporters/dot.html
-    wdioConf.reporters = ['spec','junit','allure','json']
+    wdioConf.reporters = ['spec', amassReporter]
     wdioConf.reporterOptions = {
-        junit: {
-          outputDir: './exhaust/junit',
-        },
-        json: {
-            outputDir: './exhaust/json',
-        },
-        allure: {
-			outputDir: './exhaust/allure'
-		}
+        amass: {
+            outputDir: './exhaust/amass',
+            mode: 'combine', // default is empty induvidual files for each session
+            format: 'both', //json, html, both
+            templateDir: './reportTemplates',
+            templateFile: './reportTemplates/report-template.hbs',
+            afterReport:  (rpt) => {
+                //want to something with the files you can here
+            }
+        }
     }
     wdioConf.capabilities = wdioCapabilities
     wdioConf.beforeSession = wdioBeforeSession

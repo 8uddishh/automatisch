@@ -1,0 +1,8 @@
+
+Given the user is in the page containing element "{{header-selector}}" text as "{{header-text}}"
+      Then the user enters in element "Movies-SearchText" value "{{search-code}}" 
+      Then the user clicks "Movies-SearchButton"
+      Then the user waits for "5000"
+      {{#each movies}}
+      {{> fandangoTheaterCheck }}
+      {{/each}}

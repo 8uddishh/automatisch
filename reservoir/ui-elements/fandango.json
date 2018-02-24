@@ -1,6 +1,14 @@
 {
     "Home": {
         "SearchText": ".fan-input.style-search:not(.width-100)",
-        "SearchButton": "button.fan-btn.fan-btn-style-go"
+        "SearchButton": "button.fan-btn.fan-btn-style-go",
+        "PageHeader": ".movie-tickets-header--heading.heading-size-l.heading-style-1.inline"
+    },
+    "Movies": {
+        "SearchText": ".global-search-input.ui-autocomplete-input",
+        "SearchButton": "#global-search-button",
+        "HeaderText": ".page-header",
+        "Theater1": ".fd-theater:first-of-type a",
+        "Theater2": ".fd-theater:nth-of-type(3) a"
     }
 }

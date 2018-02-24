@@ -1,0 +1,24 @@
+{{#if-eq status 'PASSED' }}
+    <article class="message is-success">
+        <div class="message-header">
+            <p class="is-marginless">{{title}}</p>
+            <span class="tag is-black is-pulled-right">{{time-diff endTime startTime}}</span>
+        </div>
+    </article>
+{{/if-eq}}
+{{#if-eq status 'FAILED' }}
+    <article class="message is-danger">
+        <div class="message-header">
+            <p class="is-marginless">{{title}}</p>
+            <span class="tag is-black is-pulled-right">{{time-diff endTime startTime}}</span>
+        </div>
+        {{> reportError error}}
+    </article>
+{{/if-eq}}
+{{#if-eq status 'PENDING' }}
+    <article class="message is-warning">
+        <div class="message-header">
+            <p class="is-marginless">{{title}}</p>
+        </div>
+    </article>
+{{/if-eq}}

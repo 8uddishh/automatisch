@@ -1,0 +1,19 @@
+{
+    "movie-search": {
+        "header-text": "BUY MOVIE TICKETS",
+        "search-name": "black panther"
+    },
+    "postcode-search": {
+        "header-selector": "Movies-HeaderText",
+        "header-text": "SEARCH RESULTS FOR \"BLACK PANTHER\"",
+        "search-code": "75244",
+        "movies": [{
+            "theater-header": "Movies-Theater1",
+            "theater-text": "AMC Village on the Parkway 9"
+        },{
+            "theater-header": "Movies-Theater2",
+            "theater-text": "Cinemark 17 and IMAX"
+        }]
+        
+    }
+}

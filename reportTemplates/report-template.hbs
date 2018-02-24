@@ -1,0 +1,144 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+        <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+        <style>
+            body {
+                background: #383534;
+                padding-top: 162px;
+            }
+
+            .mt10 {
+                margin-top: 10px;
+            }
+
+            .mt20 {
+                margin-top: 20px;
+            }
+
+            .container {
+                background-color: #215FAC;
+                min-height: 100%;
+                border-radius: 0px;
+            }
+
+            .notification {
+                position: fixed !important;
+                top: 0px !important;
+                min-height: 40px !important;
+                z-index: 10;
+                background-color: #3d85da;
+                color: #fff;
+            }
+
+            .dashboard {
+                position: fixed !important;
+                top: 62px !important;
+                z-index: 10;
+                min-height: 100px !important;
+            }
+
+            .level .heading {
+                color: #ccc;    
+            }
+
+            .level .title {
+                color: #fff;
+            }
+
+            .stack-trace {
+                font-family: 'Courier New', Courier, monospace;
+                background: #000;
+                color: rgb(170, 22, 22);
+                margin-top: 10px;
+            }
+
+            .stack-trace .card-header-title {
+                color: #CCCCCC;       
+            }
+
+            .count {
+                margin-top: 10px;
+                margin-right: 10px;
+            }
+
+            .suite-top {
+                background-color: #33a5c5;
+            }
+
+            .suite-top .card-header-title {
+                color: #fefefe;    
+            }
+
+            .suite-top .card-header-icon {
+                color: #0d336f;
+            }
+
+            .suite-in {
+                background-color: #077d50;
+            }
+
+            .suite-in .card-header-title {
+                color: #fefefe;    
+            }
+
+            .suite-in .card-header-icon {
+                color: #32dc48;
+            }
+
+            .suite-top .suite-in .card-header {
+                margin-top: 10px;
+            }
+
+            .suite-top .suite-in:first-of-type .card-header {
+                margin-top: 0px;
+            }
+
+            .suite-top .card-content {
+                background-color: #162729;
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            {{> reportHeader spec }}
+
+            {{#each suites }}
+                {{> reportBody }}
+            {{/each}}
+        </div>
+
+        <script type="text/javascript">
+            $(function() {
+                $('.card.suite-in .card-header-icon').attr('collapsed', '1')
+                $('.card.suite-in .card-content').hide()
+
+                $('.card.suite-in .card-header-icon').click(function (e) {
+                    var $parent = $($(this).parents('.suite-in')[0])
+                    if($('.card-header-icon', $parent).attr('collapsed') === '1') {
+                        $('.card-header-icon', $parent).attr('collapsed', '0')
+                        $('.card-content', $parent).show()
+                    }
+                    else {
+                        $('.card-header-icon', $parent).attr('collapsed', '1')
+                        $('.card-content', $parent).hide()
+                    }
+                })
+
+                $('.card.suite-top .card-header-icon.suite-parent').attr('collapsed', '0')
+                $('.card.suite-top .card-header-icon.suite-parent').click(function (e) {
+                    var $parent = $($(this).parents('.suite-top')[0])
+                    if($('.card-header-icon:first', $parent).attr('collapsed') === '1') {
+                        $('.card-header-icon:first', $parent).attr('collapsed', '0')
+                        $('.card-content:first', $parent).show()
+                    }
+                    else {
+                        $('.card-header-icon:first', $parent).attr('collapsed', '1')
+                        $('.card-content:first', $parent).hide()
+                    }
+                })
+            })
+        </script>
+    </body>
+</html>

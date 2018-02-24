@@ -1,0 +1,7 @@
+Feature: Fandango Search by movies
+  Scenario: Check if search works
+    Given the user opens the website
+    
+    {{> fandangoSearchMovie movie-search }}
+
+    {{> fandangoSearchByPostalcode postcode-search }}
