@@ -47,7 +47,7 @@ Feature: Fandango Search by movies
           Then the user waits for "5000"
 ```
 
-#Json Flatten
+# Json Flatten
 Its a common practice to have all css tags in a json and refer it inside the step definitions. The problem however is to name the properties in an understandable way to be reused. especially with big websites managing the json can be cumbersome when we have to give unique names for each css tags in json. Json flatten takes an hierarchial json structure and creates a flattened json
 
 consider the following json
@@ -82,9 +82,14 @@ the output json will be
 }
 ```
 
-#Amass Reporter
-A custom reporter which outputs the test results in hierarchial json and html. Reports are configured to be outputted to exhaust/amass folder. The settting can be changed in the wdio configs
+# Amass Reporter
+A custom reporter which outputs the test results in hierarchial json and html. Reports are configured to be outputted to exhaust/amass folder. The settting can be changed in the wdio configs. We use bulmacss and jquery
 
-#Config changes
+## Screenshots
+![alt tag](https://github.com/8uddishh/automatisch/blob/master/reportTemplates/screencapture1.png "Description goes here")
+
+![alt tag](https://github.com/8uddishh/automatisch/blob/master/reportTemplates/screencapture2.png "Description goes here")
+
+# Config changes
 Under wdio.es6 folder there are bootstrap*.js files which can be used to modify wdio config and life cycle hooks
 
